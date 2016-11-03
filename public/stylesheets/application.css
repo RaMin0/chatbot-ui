@@ -1,0 +1,358 @@
+/*
+ * Globals
+ */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('/fonts/glyphicons-halflings-regular.eot');
+  src: url('/fonts/glyphicons-halflings-regular.eot?#iefix')                      format('embedded-opentype'),
+       url('/fonts/glyphicons-halflings-regular.woff2')                           format('woff2'),
+       url('/fonts/glyphicons-halflings-regular.woff')                            format('woff'),
+       url('/fonts/glyphicons-halflings-regular.ttf')                             format('truetype'),
+       url('/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  color: #fff;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+  text-align: center;
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+
+
+/*
+ * Chatbox
+ */
+
+.chat-window {
+  background-color: #edeff2;
+  position: absolute;
+  width: calc(100% - 20px);
+  max-width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+.top-menu {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px 15px 15px;
+}
+.top-menu .title {
+  text-align: center;
+  font-size: 20px;
+}
+.top-menu .title a {
+  color: #bcbdc0;
+  border-color: #bcbdc0 !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.messages {
+  position: relative;
+  list-style: none;
+  padding: 20px 10px 0 10px;
+  margin: 0;
+  height: 327px;
+  overflow: scroll;
+}
+.messages .message {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+.messages .message .text .icon {
+  display: none;
+}
+.messages .message.left .text-wrapper {
+  background-color: #ffe6cb;
+  margin-left: 20px;
+}
+.messages .message.left .text-wrapper::after, .messages .message.left .text-wrapper::before {
+  right: 100%;
+  border-right-color: #ffe6cb;
+}
+.messages .message.left .text {
+  color: #c48843;
+}
+.messages .message.right .text-wrapper {
+  background-color: #c7eafc;
+  margin-right: 20px;
+  float: right;
+}
+.messages .message.right .text-wrapper::after, .messages .message.right .text-wrapper::before {
+  left: 100%;
+  border-left-color: #c7eafc;
+}
+.messages .message.right .text {
+  color: #45829b;
+}
+.messages .message.error .text-wrapper {
+  background-color: #f2dede;
+  margin: 0 auto;
+  display: block;
+  padding: 5px 20px;
+}
+.messages .message.error .text {
+  color: #a94442;
+}
+.messages .message.error .text .icon {
+  display: inline-block;
+}
+.messages .message.appeared {
+  opacity: 1;
+}
+.messages .message .text-wrapper {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 6px;
+  width: calc(100% - 85px);
+  min-width: 100px;
+  position: relative;
+  word-wrap: break-word;
+}
+.messages .message .text-wrapper::after, .messages .message .text-wrapper:before {
+  top: 18px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.messages .message .text-wrapper::after {
+  border-width: 13px;
+  margin-top: 0px;
+}
+.messages .message .text-wrapper::before {
+  border-width: 15px;
+  margin-top: -2px;
+}
+.messages .message .text-wrapper .text {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.bottom-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 20px;
+  position: absolute;
+  bottom: 0;
+}
+.bottom-wrapper .message-input-wrapper {
+  display: inline-block;
+  height: 50px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid #bcbdc0;
+  width: calc(100% - 140px);
+  position: relative;
+  padding: 0 20px;
+  border-right: none;
+  vertical-align: middle;
+}
+.bottom-wrapper .message-input-wrapper .message-input {
+  border: none;
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  outline-width: 0;
+  color: gray;
+  outline: none;
+}
+.bottom-wrapper .send-message {
+  width: 140px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 0 10px 10px 0;
+  background-color: #a3d063;
+  border: 2px solid #a3d063;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  text-align: center;
+  margin-left: -4px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.bottom-wrapper .send-message:hover {
+  color: #a3d063;
+  background-color: #fff;
+}
+.bottom-wrapper .send-message .text {
+  font-size: 18px;
+  font-weight: 300;
+  display: inline-block;
+  line-height: 40px;
+}
+.bottom-wrapper .uuid {
+  padding-left: 20px;
+  line-height: 18px;
+}
+
+.message-template {
+  display: none;
+}

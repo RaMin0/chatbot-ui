@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Chatbot UI</title>
+
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/stylesheets/bootstrap-editable.css" rel="stylesheet" />
+    <link href="/stylesheets/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.min.js"></script>
+      <script src="/javascripts/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h1 class="masthead-brand">Chatbot UI</h1>
+            </div>
+          </div>
+          <div class="inner cover">
+            <div class="chat-window">
+              <div class="top-menu">
+                <div class="title">
+                  <a href="#" data-type="url" data-name="url">
+                    https://ramin0-chatbot.herokuapp.com/
+                  </a>
+                </div>
+              </div>
+              <ul class="messages"></ul>
+              <div class="bottom-wrapper clearfix">
+                <div class="message-input-wrapper">
+                  <input class="message-input" placeholder="Type your message here..." autofocus="autofocus" />
+                </div>
+                <div class="send-message">
+                  <div class="text">Send</div>
+                  <span class="glyphicon glyphicon-send"></span>
+                </div>
+                <div class="uuid text-muted">
+                  <small>
+                    Sending as <code></code>.
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="message-template">
+              <li class="message">
+                <div class="text-wrapper">
+                  <div class="text">
+                    <span class="icon glyphicon glyphicon-exclamation-sign"></span>
+                    <span class="content"></span>
+                  </div>
+                </div>
+              </li>
+            </div>
+          </div>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>&copy; 2016 Chatbot UI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap-editable.min.js"></script>
+    <script src="/javascripts/ie10-viewport-bug-workaround.js"></script>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>
