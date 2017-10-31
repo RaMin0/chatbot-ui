@@ -13,7 +13,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	public := http.FileServer(http.Dir("public"))
+	public := http.FileServer(http.Dir("docs"))
 	http.Handle("/stylesheets/", public)
 	http.Handle("/javascripts/", public)
 	http.Handle("/images/", public)
